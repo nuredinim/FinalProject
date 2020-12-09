@@ -53,13 +53,13 @@ if (!isset($_SESSION['listid'])) {
                             <tbody>
                                 <?php
                                 //check to see if the submit button was pushed
-                                if ((isset($_GET['listName']))) {
+                                if ((isset($_GET['list']))) {
                                     // include movie controller file
                                     require_once './controller/list.php';
 
                                     // get data input into form 
                                     // and store it in variables
-                                    $name = $_GET['listName'];
+                                    $list = $_GET['list'];
                                     
                                     select_list();
                                 }
