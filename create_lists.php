@@ -1,4 +1,28 @@
-        <div class="content">
+<?php
+session_start();
+if (!isset($_SESSION['listid'])) {
+    $_SESSION['listid'] = 0;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <title>Create List</title>
+
+        <!-- Override CSS file - add your own CSS rules -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <h1 class="header-heading">Create List</h1>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="container">
+                <ul class="nav">
+                            <div class="content">
             <div class="container">
                 <div class="main">
                     <h1>Create List</h1>
@@ -20,3 +44,15 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                Lists
+            </div>
+        </div>
+    </body>
+</html>

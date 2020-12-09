@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['listid']) || ($_SESSION['listid'] == 0)) {
-    header('Location: list.php');
+if (!isset($_SESSION['listid'])) {
+    $_SESSION['listid'] = 0;
 }
 ?>
 <html lang="en">
@@ -55,24 +55,19 @@ if (!isset($_SESSION['listid']) || ($_SESSION['listid'] == 0)) {
                                 //check to see if the submit button was pushed
                                 if ((isset($_GET['listName']))) {
                                     // include movie controller file
-                                    require_once './controller/view_lists.php';
+                                    require_once './controller/list.php';
 
                                     // get data input into form 
                                     // and store it in variables
                                     $name = $_GET['listName'];
                                     
-                                    select_list($listName, $_SESSION['listid']);
+                                    select_list();
                                 }
                                 ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="container">
-                Lists
             </div>
         </div>
     </body>
