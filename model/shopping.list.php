@@ -1,6 +1,6 @@
 <?php
 
-class List {
+class ShoppingList {
 
     // declare private field
     private $mysqli;
@@ -38,12 +38,11 @@ class List {
         
     }
 
-    public function create_list() {
+    public function create_list($name, $store, $date) {
 
         // format select statement as a String
-        $sql = "INSERT listName, listStore, listDate " .
-                "FROM list " .
-                "WHERE list.listName = $listName ";
+        $sql = "INSERT INTO list (List_Name, List_Store, List_Date) 
+                VALUES ('$name', '$store', '$date')";
 
         // execute select statement
         // assign return value to variable
@@ -56,5 +55,4 @@ class List {
     }
 
 }
-
 ?>

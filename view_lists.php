@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['listid'])) {
-    $_SESSION['listid'] = 0;
-}
-?>
 <html lang="en">
     <head>  
         <title>Lists</title>
@@ -33,18 +27,9 @@ if (!isset($_SESSION['listid'])) {
                 <div class="main">
                     <h1>Search Lists</h1>
                     <div class="well">
-                        <form name="lists" id="lists" method="GET" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-                            <div class="form-group">
-                                <label for="listName">List Name</label>
-                                <input name="listName" type="text" class="form-control" id="listName" maxlength="45">
-                            </div>                                                                        
-                            <button name="submit" type="submit" class="btn btn-primary">Search</button>
-                        </form>
-                        <br>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Name</th> 
                                     <th>Store</th>
                                     <th>Date</th>                                   
@@ -53,16 +38,11 @@ if (!isset($_SESSION['listid'])) {
                             <tbody>
                                 <?php
                                 //check to see if the submit button was pushed
-                                if ((isset($_GET['list']))) {
                                     // include movie controller file
                                     require_once './controller/list.php';
-
                                     // get data input into form 
                                     // and store it in variables
-                                    $list = $_GET['list'];
-                                    
                                     select_list();
-                                }
                                 ?>
                             </tbody>
                         </table>
